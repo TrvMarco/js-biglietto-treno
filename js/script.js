@@ -8,19 +8,21 @@ const userDistance = Number(prompt("Inserire il numero di chilometri che si vuol
 const userAge = Number(prompt("Inserire l'età del passeggero"))
 // 3. Calcolare il prezzo totale del viaggio
 const balance = userDistance * priceForKm
-console.log(balance)
+
+document.getElementById("balance").innerHTML = balance.toFixed(2) + '€'
 // 4. Scontare il biglietto in base all'età del passeggero e mostrare risultato
 let finalPrice;
 
 if(userAge < 18){
     finalPrice = (balance - ( balance * 20 / 100))
-}else{
+}else if(userAge >= 65 ){
+    finalPrice = (balance - ( balance * 40 / 100))
+}
+else{
     finalPrice = balance
 }
 
-if(userAge >= 65 ){
-    finalPrice = (balance - ( balance * 40 / 100))
-}
-console.log(finalPrice.toFixed(2))
+document.getElementById("finalprice").innerHTML = finalPrice.toFixed(2) + '€'
+console.log(finalPrice.toFixed(2),"€")
 
 
