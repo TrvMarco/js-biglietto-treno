@@ -17,8 +17,7 @@ if(userAge < 18){
     finalPrice = (balance - ( balance * 20 / 100))
 }else if(userAge >= 65 ){
     finalPrice = (balance - ( balance * 40 / 100))
-}
-else{
+}else{
     finalPrice = balance
 }
 
